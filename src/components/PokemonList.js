@@ -53,7 +53,7 @@ export default function PokemonList(props) {
       } else {
         setPoke(false);
       }
-      console.log(`aqui ${Object.keys(newData).length}`);
+      console.log(` ${Object.keys(newData).length}`);
     } else {
       setFilterData(pokemons);
       setSearch(search);

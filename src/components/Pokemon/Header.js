@@ -7,9 +7,7 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-// import { capitalize } from "lodash";
 import getColorByPokemonType from "../../../constants/getColorByPokemonType";
-import Type from "./Type";
 
 export default function Header(props) {
   const { name, order, image, type } = props;
@@ -32,7 +30,6 @@ export default function Header(props) {
         <View style={styles.contentImg}>
           <Image source={{ uri: image }} style={styles.image} />
         </View>
-        {/* <Type types={type} /> */}
       </SafeAreaView>
     </>
   );

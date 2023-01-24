@@ -11,7 +11,7 @@ export async function getPokemonsApi(endpointUrl) {
 
 export async function getPokemonsApiTotal() {
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
