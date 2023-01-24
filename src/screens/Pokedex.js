@@ -1,4 +1,6 @@
+import { map } from "lodash";
 import React, { useState, useEffect } from "react";
+import { Text } from "react-native";
 
 import {
   getPokemonsApi,
@@ -6,13 +8,37 @@ import {
   getPokemonsApiTotal,
 } from "../api/pokemon";
 import PokemonList from "../components/PokemonList";
+const pokePath = "https://pokeapi.co/api/v2/";
+const pokeQuery = "pokemon?limit=151&offset=0";
+const firstGenPokemonPath = `${pokePath}${pokeQuery}`;
 
 export default function Pokedex() {
+  const [firstGenPokemonDetails, setfirstGenPokemonDetails] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const [nextUrl, setNextUrl] = useState(null);
   const [load, setLoad] = useState(false);
 
   const [filterData, setFilterData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchFirstGenPokemons = async () => {
+  //     const firstGenPokemonIdsResponse = await fetch(firstGenPokemonPath);
+  //     const firstGenPokemonIdsBody = await firstGenPokemonIdsResponse.json();
+
+  //     const firstGenPokemonDetails = await Promise.all(
+  //       firstGenPokemonIdsBody.results.map(async (p) => {
+  //         const pDetails = await fetch(p.url);
+
+  //         return await pDetails.json();
+  //       })
+  //     );
+
+  //     setfirstGenPokemonDetails(firstGenPokemonDetails);
+  //     // console.log(await firstGenPokemonDetails);
+  //   };
+
+  //   fetchFirstGenPokemons();
+  // }, []);
 
   useEffect(() => {
     (async () => {
@@ -59,7 +85,7 @@ export default function Pokedex() {
   return (
     <>
       <PokemonList
-        pokemons={pokemons}
+        pokemons={firstGenPokemonDetails}
         loadPokemons={loadPokemons}
         isNext={nextUrl}
         filterData={filterData}

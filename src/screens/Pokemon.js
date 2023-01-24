@@ -6,6 +6,7 @@ import { getPokemonDetailsApi } from "../api/pokemon";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
 import Stats from "../components/Pokemon/Stats";
+import { map } from "lodash";
 // import Favorite from "../components/Pokemon/Favorite";
 
 export default function Pokemon(props) {

@@ -11,7 +11,7 @@ export async function getPokemonsApi(endpointUrl) {
 
 export async function getPokemonsApiTotal() {
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=50`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
@@ -32,7 +32,7 @@ export async function getPokemonDetailsByUrlApi(url) {
 
 export async function getPokemonDetailsApi(id) {
   try {
-    const url = `${API_HOST}/pokemon/${id}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
