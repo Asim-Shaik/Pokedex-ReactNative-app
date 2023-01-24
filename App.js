@@ -6,8 +6,7 @@ import Pokemon from "./src/screens/Pokemon";
 export default function App() {
   const [loaded] = useFonts({
     InterBold: require("./assets/fonts/Inter-Bold.ttf"),
-    // InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
-    // InterMedium: require("./assets/fonts/Inter-Medium.ttf"),
+
     InterRegular: require("./assets/fonts/Inter-Regular.ttf"),
     InterLight: require("./assets/fonts/Inter-Light.ttf"),
   });
@@ -28,8 +27,6 @@ export default function App() {
       >
         <Stack.Screen name="Home" component={Pokedex} />
         <Stack.Screen name="Pokemon" component={Pokemon} />
-        {/* <Stack.Screen name="Details" component={Details} /> */}
-        {/* <Stack.Screen/> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

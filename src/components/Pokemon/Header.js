@@ -1,3 +1,4 @@
+import { capitalize } from "lodash";
 import React from "react";
 import {
   StyleSheet,
@@ -24,7 +25,7 @@ export default function Header(props) {
 
       <SafeAreaView style={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.name}>{capitalize(name)}</Text>
           <Text style={styles.order}>#{`${order}`.padStart(3, 0)}</Text>
         </View>
         <View style={styles.contentImg}>
